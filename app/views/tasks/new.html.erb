@@ -1,0 +1,12 @@
+<%= form_for(@task) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :details %>
+  <%= f.text_field :details %>
+  <%= f.label :completed %>
+  <%= f.number_field :completed %>
+  <%= f.submit %>
+<% end %>
+<%= link_to "See all tasks", tasks_path %></li>
+<%# Quando uso o form_for, ele já vem com o authenticity token. Então preciso só fazer
+os  params.require(:task).permit(:title, :details, :completed) %>
